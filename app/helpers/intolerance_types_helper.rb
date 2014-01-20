@@ -1,0 +1,2 @@
+module IntoleranceTypesHelper
+end

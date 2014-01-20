@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @intolerance_type.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @intolerance_type.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_intolerance_type_path(@intolerance_type) %> |
+<%= link_to 'Back', intolerance_types_path %>

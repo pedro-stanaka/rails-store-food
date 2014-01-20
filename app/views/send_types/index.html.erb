@@ -1,0 +1,23 @@
+<h1>Listing send_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @send_types.each do |send_type| %>
+  <tr>
+    <td><%= send_type.name %></td>
+    <td><%= link_to 'Show', send_type %></td>
+    <td><%= link_to 'Edit', edit_send_type_path(send_type) %></td>
+    <td><%= link_to 'Destroy', send_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Send type', new_send_type_path %>

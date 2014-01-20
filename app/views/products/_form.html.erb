@@ -1,0 +1,24 @@
+<%= simple_form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.association :allergy_type %>
+    <%= f.association :category %>
+    <%= f.association :sub_category %>
+    <%= f.association :intolerance_type %>
+    <%= f.association :manufacturer %>
+    <%= f.association :send_type %>
+    <%= f.button :submit %>
+<% end %>

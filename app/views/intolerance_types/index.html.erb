@@ -1,0 +1,25 @@
+<h1>Listing intolerance_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @intolerance_types.each do |intolerance_type| %>
+  <tr>
+    <td><%= intolerance_type.name %></td>
+    <td><%= intolerance_type.description %></td>
+    <td><%= link_to 'Show', intolerance_type %></td>
+    <td><%= link_to 'Edit', edit_intolerance_type_path(intolerance_type) %></td>
+    <td><%= link_to 'Destroy', intolerance_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Intolerance type', new_intolerance_type_path %>

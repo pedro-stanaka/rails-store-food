@@ -1,4 +1,25 @@
 CantinhoDoAlergico::Application.routes.draw do
+  resources :products
+
+
+  resources :send_types
+
+
+  resources :manufacturers
+
+
+  resources :intolerance_types
+
+
+  resources :sub_categories
+
+
+  resources :categories
+
+
+  resources :allergy_types
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
