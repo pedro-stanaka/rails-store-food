@@ -28,6 +28,7 @@ gem 'cancan'
 
 gem 'devise'
 
+gem 'bootstrap-sass', '~> 3.0.3.0'
 
 gem 'simple_form'
 # To use ActiveModel has_secure_password
