@@ -1,32 +1,18 @@
 <h1>Listing products</h1>
 
-<table>
-  <tr>
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
     <th>Name</th>
-    <th>Description</th>
     <th>Price</th>
-    <th>Allergy type</th>
-    <th>Category</th>
-    <th>Sub category</th>
-    <th>Intolerance type</th>
-    <th>Manufacturer</th>
-    <th>Send type</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="3">Actions</th>
   </tr>
+  </thead>
 
 <% @products.each do |product| %>
   <tr>
     <td><%= product.name %></td>
-    <td><%= product.description %></td>
     <td><%= product.price %></td>
-    <td><%= product.allergy_type %></td>
-    <td><%= product.category %></td>
-    <td><%= product.sub_category %></td>
-    <td><%= product.intolerance_type %></td>
-    <td><%= product.manufacturer %></td>
-    <td><%= product.send_type %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
