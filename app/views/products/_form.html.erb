@@ -15,10 +15,10 @@
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.association :allergy_type %>
-    <%= f.association :category %>
-    <%= f.association :sub_category %>
+    <%= f.input :category %>
+    <%= f.input :sub_category %>
     <%= f.association :intolerance_type %>
-    <%= f.association :manufacturer %>
+    <%= f.input :manufacturer %>
     <%= f.association :send_type %>
     <%= f.button :submit %>
 <% end %>
