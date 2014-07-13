@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140120192915) do
+ActiveRecord::Schema.define(:version => 20140713135105) do
 
   create_table "allergy_types", :force => true do |t|
     t.string   "name"
@@ -25,7 +25,10 @@ ActiveRecord::Schema.define(:version => 20140120192915) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "ancestry"
   end
+
+  add_index "categories", ["ancestry"], :name => "index_categories_on_ancestry"
 
   create_table "intolerance_types", :force => true do |t|
     t.string   "name"
@@ -60,15 +63,5 @@ ActiveRecord::Schema.define(:version => 20140120192915) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "sub_categories", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "sub_categories", ["category_id"], :name => "index_sub_categories_on_category_id"
 
 end

@@ -29,7 +29,8 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 
 gem 'simple_form'
 
-ruby '1.9.3'
+gem 'ancestry'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

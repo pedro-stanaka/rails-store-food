@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-
+    @categories = ancestry_options(Category.scoped.arrange(:order => :name)) {|i| "#{'-'*i.depth} #{i.name}"}
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }
@@ -79,5 +79,18 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url }
       format.json { head :no_content }
     end
+  end
+
+  protected
+
+  def ancestry_options(items, &block)
+    return ancestry_options(items){ |i| "#{'-' * i.depth} #{i.name}" } unless block_given?
+
+    result = []
+      items.map do |item, sub_itens|
+        result << [yield(item), item.id]
+        result += ancestry_options(sub_itens, &block)
+      end
+    result
   end
 end

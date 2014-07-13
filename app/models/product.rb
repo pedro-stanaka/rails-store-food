@@ -6,5 +6,6 @@ class Product < ActiveRecord::Base
 	has_many :send_type
 	has_one :sub_category
 
+  accepts_nested_attributes_for :category
   	attr_accessible :allergy_type, :category, :description, :intolerance_type, :manufacturer, :name, :price, :send_type, :sub_category
 end
